@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 from typing import List, Dict
 
+# DM: usually the classes/objects should live on their own file but these are pretty small so it's fine. As things grow larger, you'll probalby have to move it around so the file keeps single responsibility. 
+
 @dataclass
 class Item:
     id: str
@@ -20,6 +22,7 @@ class Rubric:
     domains: List[Domain]
     flags: Dict[str, bool]
 
+# DM: I'm not too familiar with python but are these methods outside of the dataclass's defined above? An alternative is that they can be defined within the class themselves so they live together.
 def build_items(item_dicts):
     items = []
     for item_dict in item_dicts:

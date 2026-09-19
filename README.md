@@ -1,3 +1,5 @@
+# DM: good readme to explain the structure and what's going on. 
+
 # LLM Clinical Eval Framework
 
 A configurable, rubric-driven framework for evaluating LLM-generated clinical recommendations. Rather than hardcoding a single disease-specific rubric into the pipeline, this project treats the **scoring rubric itself as data** — any structured clinical rubric can be loaded and used to score any clinical response, with no changes to the underlying engine.
@@ -69,7 +71,7 @@ The included `example_rubric.yaml` is a generalized, condition-agnostic version 
    ```
    pip install pyyaml python-dotenv anthropic --break-system-packages
    ```
-2. Create a `.env` file in the project root:
+2. Create a `.env` file in the project root: # DM: good use of .env to prevent keys from being exposed especially in a public git. It's a pattern I saw being used in a few other repos too. I use it for my javascript project. 
    ```
    ANTHROPIC_API_KEY=your-key-here
    ```
@@ -78,6 +80,8 @@ The included `example_rubric.yaml` is a generalized, condition-agnostic version 
    python -m prompts.llm_judge
    ```
    You'll be prompted for case details, then the pipeline will generate a consultant response, score it, and print the itemized results plus a total.
+
+#DM: a thought too is if you want the run to configure what LLM model version they want to run, they can provide it as an argument in the python script. Or a config/setup page where they can define on that page.
 
 ## Design notes / known limitations
 
